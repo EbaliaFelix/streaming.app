@@ -37,18 +37,54 @@
         </div>
       </div>
     </nav>
+<div id="crud-section">
 
-    <div id="crud-section">
-      <!-- Sección de Agregar -->
-      <div id="create" class="d-none">
-        <h3>Agregar Película</h3>
-        <form onsubmit="addMovie(event)">
-          <input type="text" id="new-title" class="form-control mb-2" placeholder="Título" required />
-          <input type="text" id="new-director" class="form-control mb-2" placeholder="Director" required />
-          <button type="submit" class="btn btn-success">Guardar</button>
-        </form>
-      </div>
+  <!-- Sección de Agregar -->
+  <div id="create" class="d-none">
+    <h3 class="mb-3">Agregar Película</h3>
 
+    <form onsubmit="addMovie(event)">
+
+      <input
+        type="text"
+        id="new-title"
+        class="form-control mb-2"
+        placeholder="Título"
+        required
+      />
+
+      <input
+        type="text"
+        id="new-director"
+        class="form-control mb-2"
+        placeholder="Director"
+        required
+      />
+
+      <input
+        type="number"
+        id="new-year"
+        class="form-control mb-2"
+        placeholder="Año"
+        required
+      />
+
+      <input
+        type="text"
+        id="new-genre"
+        class="form-control mb-3"
+        placeholder="Género"
+        required
+      />
+
+      <button type="submit" class="btn btn-success w-100">
+        Guardar
+      </button>
+
+    </form>
+  </div>
+
+</div>
       <!-- Sección de Ver -->
       <div id="read" class="d-none">
         <h3>Listado de Películas</h3>
