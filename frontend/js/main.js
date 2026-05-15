@@ -1,4 +1,4 @@
-// ================= LOGIN =================
+// LOGIN
 document.getElementById("login-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -19,7 +19,7 @@ function logout() {
   document.getElementById("login-section").classList.remove("d-none");
 }
 
-// ================= NAVEGACIÓN =================
+// NAVEGACIÓN 
 function showSection(sectionId) {
   ["create", "read", "update", "delete"].forEach(id => {
     document.getElementById(id).classList.add("d-none");
@@ -30,7 +30,7 @@ function showSection(sectionId) {
   if (sectionId === "read") renderMovies();
 }
 
-//////////////////// AGREGAR (POST)
+//AGREGAR (POST)
 async function addMovie(e) {
   e.preventDefault();
 
@@ -51,7 +51,7 @@ async function addMovie(e) {
   renderMovies();
 }
 
-//////////////////// LEER (GET)
+//LEER (GET)
 async function renderMovies() {
   const res = await fetch("http://localhost:3000/peliculas");
   const movies = await res.json();
@@ -70,7 +70,7 @@ async function renderMovies() {
   });
 }
 
-//////////////////// ACTUALIZAR (PUT)
+//ACTUALIZAR (PUT)
 async function updateMovie(e) {
   e.preventDefault();
 
@@ -92,7 +92,7 @@ async function updateMovie(e) {
   renderMovies();
 }
 
-//////////////////// ELIMINAR (DELETE)
+//ELIMINAR (DELETE)
 async function deleteMovie(e) {
   e.preventDefault();
 
