@@ -12,7 +12,7 @@ const peliculasRoutes = require('./routes/movieRoutes');
 const authRoutes = require('./routes/auth');
 
 app.use('/auth', authRoutes);
-app.use('/peliculas', peliculasRoutes);
+app.use('/peliculas', peliculasRoutes,movieRoutes);
 
 /* FRONTEND */
 app.use(express.static(path.join(__dirname, "../frontend")));
