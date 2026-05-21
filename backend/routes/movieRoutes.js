@@ -5,22 +5,45 @@ const verifyToken = require("../middleware/authMiddleware");
 const verifyRole = require("../middleware/roleMiddleware");
 
 const {
-  getMovies,
+  getMovie,
   createMovie,
   updateMovie,
   deleteMovie
 } = require("../controllers/movieControllers");
 
-// GET
-router.get("/", verifyToken, verifyRole("user"), getMovies);
+// VER PELÍCULAS
+router.get(
+  "/",
+  verifyToken,
+  verifyRole("admin", "editor", "user"),
+  getMovie
+);
 
-// POST
-router.post("/", verifyToken, verifyRole("admin"), createMovie);
 
-// PUT
-router.put("/:id", verifyToken, verifyRole("admin"), updateMovie);
+// CREAR
+router.post(
+  "/",
+  verifyToken,
+  verifyRole("admin", "editor"),
+  createMovie
+);
 
-// DELETE
-router.delete("/:id", verifyToken, verifyRole("admin"), deleteMovie);
+
+// ACTUALIZAR
+router.put(
+  "/:id",
+  verifyToken,
+  verifyRole("admin", "editor"),
+  updateMovie
+);
+
+
+// ELIMINAR
+router.delete(
+  "/:id",
+  verifyToken,
+  verifyRole("admin"),
+  deleteMovie
+);
 
 module.exports = router;

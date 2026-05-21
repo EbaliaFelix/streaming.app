@@ -1,57 +1,234 @@
+/* =========================
+   GENERAL
+========================= */
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #141e30, #243b55);
-  color: white;
-  margin: 0;
+	font-family: 'Segoe UI', sans-serif;
+	background: linear-gradient(135deg, #141e30, #243b55);
+	color: white;
+	margin: 0;
+	min-height: 100vh;
+	transition: all 0.3s ease;
 }
 
+
+/* =========================
+   CONTENEDOR
+========================= */
 
 .container {
-  max-width: 800px;
-  margin: 40px auto;
-  background: #1e1e2f;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	max-width: 1100px;
+	margin: 40px auto;
+	background-color: #1e1e2f;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	transition: all 0.3s ease;
 }
 
 
-input {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 6px;
-  border: none;
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar {
+	background-color: #1f1f1f;
+	padding: 15px;
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+	transition: all 0.3s ease;
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+	color: white !important;
+	font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+	color: #00c6ff !important;
 }
 
 
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  background: #00c6ff;
-  color: black;
-  cursor: pointer;
-  transition: 0.3s;
+/* =========================
+   TITULOS
+========================= */
+
+h2,
+h3 {
+	color: white;
+	font-weight: bold;
+	transition: all 0.3s ease;
 }
 
 
-button:hover {
-  background: #0072ff;
-  color: white;
+/* =========================
+   INPUTS
+========================= */
+
+input,
+.form-control {
+	padding: 10px;
+	margin: 5px;
+	border-radius: 8px;
+	border: none;
+	transition: all 0.3s ease;
 }
 
+
+/* =========================
+   BOTONES
+========================= */
+
+button,
+.btn {
+	padding: 10px 15px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-weight: 500;
+}
+
+button:hover,
+.btn:hover {
+	transform: translateY(-2px);
+}
+
+
+/* =========================
+   LISTA
+========================= */
 
 ul {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 
-li {
-  background: #2c2c3e;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
+/* =========================
+   CARDS
+========================= */
+
+.card {
+	background-color: #1f1f1f;
+	color: white;
+	border: none;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+	transition: all 0.3s ease;
+}
+
+.movie-card {
+	transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+	transform: scale(1.03);
+}
+
+.card img {
+	height: 250px;
+	object-fit: cover;
+}
+
+.card-title {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.card-text {
+	color: #d1d1d1;
+}
+
+
+/* =========================
+   LIST GROUP
+========================= */
+
+.list-group-item {
+	background-color: #1f1f1f;
+	color: white;
+	border: none;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode {
+	background: #f5f5f5;
+	color: black;
+}
+
+
+/* CONTENEDOR */
+
+body.light-mode .container {
+	background-color: white;
+	color: black;
+}
+
+
+/* NAVBAR */
+
+body.light-mode .custom-navbar {
+	background-color: white;
+}
+
+body.light-mode .custom-navbar .nav-link,
+body.light-mode .custom-navbar .navbar-brand {
+	color: black !important;
+}
+
+body.light-mode .custom-navbar .nav-link:hover {
+	color: #0072ff !important;
+}
+
+
+/* TITULOS */
+
+body.light-mode h2,
+body.light-mode h3 {
+	color: black;
+}
+
+
+/* INPUTS */
+
+body.light-mode input,
+body.light-mode .form-control {
+	background-color: white;
+	color: black;
+	border: 1px solid #ccc;
+}
+
+
+/* LABELS */
+
+body.light-mode label {
+	color: black;
+}
+
+
+/* CARDS */
+
+body.light-mode .card {
+	background-color: white;
+	color: black;
+}
+
+body.light-mode .card-text {
+	color: #333;
+}
+
+
+/* LISTAS */
+
+body.light-mode .list-group-item {
+	background-color: white;
+	color: black;
 }

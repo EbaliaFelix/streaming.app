@@ -9,10 +9,10 @@ app.use(express.json());
 
 /* RUTAS */
 const peliculasRoutes = require('./routes/movieRoutes');
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/authRoutes');
 
 app.use('/auth', authRoutes);
-app.use('/peliculas', peliculasRoutes,movieRoutes);
+app.use('/peliculas', peliculasRoutes);
 
 /* FRONTEND */
 app.use(express.static(path.join(__dirname, "../frontend")));
